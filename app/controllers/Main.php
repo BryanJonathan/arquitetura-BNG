@@ -1,18 +1,23 @@
 <?php
 
 namespace bng\Controllers;
+use bng\Controllers\BaseController;
+use bng\Models\Agents;
 
-class Main 
+class Main extends BaseController
 {
   public function index()
   {
-    // echo "DENTRO DA INDEX E DO MAIN";
-    // $nomes = [];
-    // printData($nomes);
+    $model = new Agents();
+    $results = $model->get_total_agents();
+    printData($results);
+
+    // $data['nome'] = 'joao';
+    // $data['apelido'] = 'maria';
+    
+    // $this->view('layouts/html_header');
+    // $this->view('home', $data);
+    // $this->view('layouts/html_footer');
   }
 
-  public function teste()
-  {
-    echo "DENTRO DA TESTE E DO MAIN";
-  }
 }
